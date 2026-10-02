@@ -5,20 +5,13 @@ using UnityEngine.AI;
 
 public class enemNavigation : MonoBehaviour
 {
+    public damageboxmanager damageboxmanager;   
     NavMeshAgent agent;
     Transform destination;
-    public bool ismaster;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        if (ismaster)
-        {
-             destination = FindObjectOfType<CharacterController>().transform;
-        }
-        else
-        {
-            destination = GameObject.FindGameObjectWithTag("master").transform;        
-        }
+        destination = damageboxmanager.damageboxes[Random.Range(0, damageboxmanager.damageboxes.Length)].transform;
     }
 
     // Update is called once per frame

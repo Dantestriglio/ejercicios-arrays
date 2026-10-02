@@ -9,7 +9,8 @@ public class enemiesmanager : MonoBehaviour
     {
         enemies = FindObjectsOfType<Enemy>();
         Debug.Log(enemies[enemies.Length - 1].damagepoints);
-        setallenemiesdamagepointsto(9);
+        setallenemiesdamagepointsto(Random.Range(1, 11));
+
     }
 
     // Update is called once per frame
